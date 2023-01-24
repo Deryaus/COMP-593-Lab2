@@ -34,12 +34,18 @@ def main():
         'title': 'tenet',
         'genre': 'action'
     }
-    student['movies'].append(new_movie)    
+    student['movies'].append(new_movie)
+    name_id(student)
     return student
 
 
-def name_id():
-    print()
+def name_id(student):
+    full_name = student['full_name']
+    first_name = str.split(student['full_name'])
+    print(f'My name is {full_name}, but you can call me King {first_name[0]}.')
+    print('My student ID is', student['student_id'])
+
+
     
 if __name__ == '__main__':
     main()
