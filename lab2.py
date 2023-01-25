@@ -8,7 +8,7 @@ Usage:
 
 ---------------------ι𝐍Ⓙย𝐬𝓣ᶤςⒺ Ⓐ𝐍ＹωᕼⒺг𝐄 ᶤ𝐬 ᵃ tｈяᗴＡт ⓉＯ 𝐣υ𝔰ｔ𝐢ᶜⓔ 𝐄V乇яｙ山卄εŘ乇--------------------"""
 def main():
-    student = {
+    about_me = {
 
         'full_name': 'Geoff Smith',
         'student_id': 10256979,
@@ -30,16 +30,17 @@ def main():
         'title': 'tenet',
         'genre': 'action'
     }
-    student['movies'].append(new_movie)
-    name_id(student)
+    about_me['movies'].append(new_movie)
+    name_id(about_me)
+    print_movie_genres(about_me)
 
-    return student
+    return about_me
 
-def name_id(student):
-    full_name = student['full_name']
-    first_name = str.split(student['full_name'])
+def name_id(about_me):
+    full_name = about_me['full_name']
+    first_name = str.split(about_me['full_name'])
     print(f'My name is {full_name}, but you can call me King {first_name[0]}.')
-    print('My student ID is', student['student_id'])
+    print('My student ID is', about_me['student_id'], end='\n\n')
 
 # TODO: Step 5 - Function that adds pizza toppings to data structure
 def add_pizza_toppings(about_me, toppings):
@@ -51,6 +52,8 @@ def print_pizza_toppings(about_me):
 
 # TODO: Step 7 - Function that prints comma-separated list of movie genres
 def print_movie_genres(about_me):
+    for i in about_me['movies']:
+        print('I like to watch', about_me['movies']['genre'])
     return 
 
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
