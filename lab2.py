@@ -35,7 +35,7 @@ def main():
 
 def name_id(about_me):
     first_name = str.split(about_me['full_name'])
-    print(f'My name is ', about_me['full_name'], end=' ') 
+    print(f'My name is ', about_me['full_name'], end=', ') 
     print(f'but you can call me King {first_name[0]}.')
     print('My student ID is', about_me['student_id'], end='.\n')
 
