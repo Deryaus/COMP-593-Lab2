@@ -25,14 +25,8 @@ def main():
             }
             ] 
         }
-
-    new_movie = {
-        'title': 'tenet',
-        'genre': 'thriller'
-    }
-    about_me['movies'].append(new_movie)
+    about_me['movies'].append({'title':  'tenet', 'genre': 'thriller'})
     name_id(about_me)
-    print_movie_genres(about_me)
     print_pizza_toppings(about_me)
     add_pizza_toppings(about_me, ('PINEAPPLE', 'PEPPERONI'))
     print_pizza_toppings(about_me)
@@ -40,10 +34,10 @@ def main():
     print_movie_titles(about_me)
 
 def name_id(about_me):
-    full_name = about_me['full_name']
     first_name = str.split(about_me['full_name'])
-    print(f'My name is {full_name}, but you can call me King {first_name[0]}.')
-    print('My student ID is', about_me['student_id'], end='\n')
+    print(f'My name is ', about_me['full_name'], end=' ') 
+    print(f'but you can call me King {first_name[0]}.')
+    print('My student ID is', about_me['student_id'], end='.\n')
 
 #Step 5 - Function that adds pizza toppings to data structure
 def add_pizza_toppings(about_me, toppings):
@@ -60,27 +54,23 @@ def print_pizza_toppings(about_me):
 
 # TODO: Step 7 - Function that prints comma-separated list of movie genres
 def print_movie_genres(about_me):
-    print('\nI like to watch ', end='')
-    #for i,g in enumerate(about_me['movies']):
-    #    if i < len(about_me['movies']) -1:
-    #        print(f'{g["genre"]}, ', end='')
-    #    else:
-    #        print(f'{g["genre"]} ')
-
+    print('\nI like to watch', end=' ')
     movie_genres = [g['genre'] for g in about_me['movies']]
     genre_list = ', '.join(movie_genres)
-    x = 'and'
-    genre_list.insert(-1, x)
-    print(genre_list)
+    x = str.split(genre_list)
+    x.insert(-1, 'and')
+    genre_list_edited = ' '.join((s) for s in x)
+    print(genre_list_edited, end=' movies.\n')
    
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
 def print_movie_titles(movie_list):
-    print('\nSome of my favourite movies are ', end='')
-    for i,m in enumerate(movie_list['movies']):
-        if i < len(movie_list['movies']) -1:
-            print(f'{m["title"]}, ', end='')
-        else:
-            print(f'{m["title"]} ')
+    print('\nSome of my favourite movies are', end=' ')
+    movie_titles = [g['title'].title() for g in movie_list['movies']]
+    movies = ', '.join(movie_titles)
+    x = str.split(movies)
+    x.insert(-1, 'and')
+    movies_edited = ' '.join((s)for s in x)
+    print(movies_edited, end='!')
 
 if __name__ == '__main__':
     main()
