@@ -1,7 +1,7 @@
 """--------------------ι𝐍Ⓙย𝐬𝓣ᶤςⒺ Ⓐ𝐍ＹωᕼⒺг𝐄 ᶤ𝐬 ᵃ tｈяᗴＡт ⓉＯ 𝐣υ𝔰ｔ𝐢ᶜⓔ 𝐄V乇яｙ山卄εŘ乇 --------------------
 
 Description:
- Extracts information from a dictionary.
+ Extracts information from a dictionary and prints information about a student.
 
 Usage:
  python lab2.py
@@ -22,7 +22,7 @@ def main():
             {
                 'title': 'interstellar',
                 'genre': 'science fiction'
-            }
+            },
             ] 
         }
     about_me['movies'].append({'title':  'tenet', 'genre': 'thriller'})
@@ -33,26 +33,27 @@ def main():
     print_movie_genres(about_me)
     print_movie_titles(about_me)
 
+# Function that prints Name and student number
 def name_id(about_me):
     first_name = str.split(about_me['full_name'])
     print(f'My name is ', about_me['full_name'], end=', ') 
     print(f'but you can call me King {first_name[0]}.')
     print('My student ID is', about_me['student_id'], end='.\n')
 
-#Step 5 - Function that adds pizza toppings to data structure
+#Function that adds pizza toppings to data structure
 def add_pizza_toppings(about_me, toppings):
     about_me['pizzatoppings'].extend(toppings)
     for i,t in enumerate(about_me['pizzatoppings']):
         about_me['pizzatoppings'][i] = t.lower()  
     about_me['pizzatoppings'].sort()
 
-#Step 6 - Function that prints bullet list of pizza toppings
+#Function that prints bullet list of pizza toppings
 def print_pizza_toppings(about_me):
     print('\nMy favourite pizza toppings are:')
     for t in about_me['pizzatoppings']:
         print(f'- {t}')
 
-# TODO: Step 7 - Function that prints comma-separated list of movie genres
+#Function that prints comma-separated list of movie genres
 def print_movie_genres(about_me):
     print('\nI like to watch', end=' ')
     movie_genres = [g['genre'] for g in about_me['movies']]
@@ -62,7 +63,7 @@ def print_movie_genres(about_me):
     genre_list_edited = ' '.join((s) for s in x)
     print(genre_list_edited, end=' movies.\n')
    
-# TODO: Step 8 - Function that prints comma-separated list of movie titles
+#Function that prints comma-separated list of movie titles
 def print_movie_titles(movie_list):
     print('\nSome of my favourite movies are', end=' ')
     movie_titles = [g['title'].title() for g in movie_list['movies']]
